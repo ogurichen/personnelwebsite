@@ -1,6 +1,3 @@
-# Large media (add separately or via Git LFS)
-*.mp3
-
 # System files
 .DS_Store
 Thumbs.db
