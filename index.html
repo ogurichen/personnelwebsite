@@ -29,12 +29,6 @@ button{font-family:inherit;cursor:none}
 /* ============ NOISE OVERLAY ============ */
 .noise-overlay{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:0.03;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");background-size:256px}
 
-/* ============ MUSIC TOGGLE ============ */
-.music-toggle{position:fixed;bottom:32px;left:32px;z-index:1001;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,0.9);border:1px solid #E5E5E5;font-size:18px;color:#1A1A1A;cursor:none;display:flex;align-items:center;justify-content:center;transition:background 0.3s,transform 0.3s}
-.music-toggle:hover{background:#FFFFFF;transform:scale(1.1)}
-.music-toggle.playing{color:#EA580C}
-@media (max-width:768px){.music-toggle{bottom:32px;left:24px}}
-
 /* ============ NAV ============ */
 .nav-top{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;justify-content:center;align-items:center;gap:40px;padding:24px 48px;mix-blend-mode:difference}
 .nav-top a{font-size:14px;font-weight:600;color:#FFFFFF;letter-spacing:0.08em;text-transform:uppercase;transition:opacity 0.3s;opacity:0.7}
@@ -278,10 +272,6 @@ button{font-family:inherit;cursor:none}
 </style>
 </head>
 <body>
-
-<!-- ===== BACKGROUND MUSIC ===== -->
-<audio id="bgMusic" loop preload="none"></audio>
-<button id="musicToggle" class="music-toggle" title="播放/暂停音乐">&#9835;</button>
 
 <!-- ===== CUSTOM CURSOR ===== -->
 <div class="cursor" id="cursor"></div>
@@ -590,34 +580,6 @@ button{font-family:inherit;cursor:none}
 <!-- ===== SCRIPTS ===== -->
 <script src="https://unpkg.com/lenis@1/dist/lenis.min.js"></script>
 <script>
-/* ============ BACKGROUND MUSIC ============ */
-const bgMusic = document.getElementById('bgMusic');
-const musicToggle = document.getElementById('musicToggle');
-let musicLoaded = false;
-
-function playMusic() {
-  if (!musicLoaded) {
-    bgMusic.src = 'Aerosmith-Dream On (1).mp3';
-    bgMusic.volume = 0.3;
-    musicLoaded = true;
-  }
-  bgMusic.play().then(() => {
-    musicToggle.classList.add('playing');
-  }).catch(() => {
-    musicToggle.classList.remove('playing');
-  });
-}
-
-musicToggle.addEventListener('click', (e) => {
-  e.stopPropagation();
-  if (bgMusic.paused) {
-    playMusic();
-  } else {
-    bgMusic.pause();
-    musicToggle.classList.remove('playing');
-  }
-});
-
 /* ============ CUSTOM CURSOR ============ */
 const cursor = document.getElementById('cursor');
 let cursorX = 0, cursorY = 0;
