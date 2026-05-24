@@ -280,7 +280,7 @@ button{font-family:inherit;cursor:none}
 <body>
 
 <!-- ===== BACKGROUND MUSIC ===== -->
-<audio id="bgMusic" src="Aerosmith-Dream On.mp3" loop preload="auto"></audio>
+<audio id="bgMusic" loop preload="none"></audio>
 <button id="musicToggle" class="music-toggle" title="播放/暂停音乐">&#9835;</button>
 
 <!-- ===== CUSTOM CURSOR ===== -->
@@ -593,24 +593,20 @@ button{font-family:inherit;cursor:none}
 /* ============ BACKGROUND MUSIC ============ */
 const bgMusic = document.getElementById('bgMusic');
 const musicToggle = document.getElementById('musicToggle');
+let musicLoaded = false;
 
 function playMusic() {
+  if (!musicLoaded) {
+    bgMusic.src = 'Aerosmith-Dream On.mp3';
+    bgMusic.volume = 0.3;
+    musicLoaded = true;
+  }
   bgMusic.play().then(() => {
     musicToggle.classList.add('playing');
   }).catch(() => {
     musicToggle.classList.remove('playing');
   });
 }
-
-// Try autoplay on first user interaction
-function tryAutoplay() {
-  bgMusic.volume = 0.3;
-  playMusic();
-  document.removeEventListener('click', tryAutoplay);
-  document.removeEventListener('scroll', tryAutoplay);
-}
-document.addEventListener('click', tryAutoplay, { once: true });
-document.addEventListener('scroll', tryAutoplay, { once: true });
 
 musicToggle.addEventListener('click', (e) => {
   e.stopPropagation();
