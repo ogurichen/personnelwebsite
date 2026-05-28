@@ -173,6 +173,26 @@ button{font-family:inherit;cursor:none}
 .lightbox .close-btn{position:absolute;top:28px;right:36px;font-size:36px;color:#FFFFFF;background:none;border:none;cursor:none;transition:opacity 0.3s;line-height:1}
 .lightbox .close-btn:hover{opacity:0.6}
 
+/* ============ VIDEO CASE ANALYSIS ============ */
+.video-section{margin-top:80px}
+.video-section .section-label{margin-bottom:8px}
+.video-section .section-subtitle{font-size:13px;color:#999;margin-bottom:48px}
+.video-timeline{position:relative;padding-left:0}
+.video-step{display:flex;gap:32px;margin-bottom:56px;position:relative}
+.video-step:last-child{margin-bottom:0}
+.video-step::before{content:'';position:absolute;left:39px;top:80px;bottom:-56px;width:2px;background:#E5E5E5}
+.video-step:last-child::before{display:none}
+.video-icon{flex:0 0 80px;height:80px;border-radius:50%;background:#FFF7ED;border:3px solid #EA580C;display:flex;align-items:center;justify-content:center;font-size:32px;font-weight:900;color:#EA580C;position:relative;z-index:1}
+.video-body h4{font-size:20px;font-weight:700;margin-bottom:8px;color:#1A1A1A}
+.video-body p{font-size:14px;color:#666;line-height:1.7;margin-bottom:12px;max-width:600px}
+.video-tags{display:flex;gap:8px;flex-wrap:wrap}
+.video-tags span{font-size:12px;background:#FFF7ED;color:#EA580C;padding:4px 14px;border-radius:20px}
+@media (max-width:768px){
+  .video-step{flex-direction:column;gap:16px}
+  .video-step::before{left:23px;top:48px}
+  .video-icon{flex:0 0 48px;height:48px;font-size:20px}
+}
+
 /* ============ NARRATIVE SECTION ============ */
 .narrative-section{padding:180px 0;background:#FFFFFF}
 .narrative-inner{max-width:680px;margin:0 auto}
@@ -407,6 +427,38 @@ button{font-family:inherit;cursor:none}
         <div class="metric-label">总点赞</div>
         <div style="margin-top:12px;font-size:13px;color:#999999;line-height:1.5">代表作：燕云十六声、鬼灭之刃同人创作</div>
         <div class="strategy-tags" style="margin-top:12px">跨平台分发 + 复合型创作 + 精准内容狙击</div>
+      </div>
+    </div>
+
+    <!-- Video Case Analysis -->
+    <div class="video-section fade-up">
+      <div class="section-label">视频案例分析</div>
+      <p class="section-subtitle">内容策略拆解</p>
+      <div class="video-timeline">
+        <div class="video-step">
+          <div class="video-icon">1</div>
+          <div class="video-body">
+            <h4>选题定位</h4>
+            <p>分析目标受众的兴趣图谱与痛点，结合平台内容生态缺口，确定差异化的选题切入方向。</p>
+            <div class="video-tags"><span>用户画像</span><span>竞品分析</span><span>热点借势</span></div>
+          </div>
+        </div>
+        <div class="video-step">
+          <div class="video-icon">2</div>
+          <div class="video-body">
+            <h4>脚本结构</h4>
+            <p>"钩子-展开-高潮-收尾"四段结构，前3秒设置悬念/冲突/利益点，正文以信息增量驱动完读。</p>
+            <div class="video-tags"><span>黄金3秒</span><span>信息密度</span><span>情绪曲线</span></div>
+          </div>
+        </div>
+        <div class="video-step">
+          <div class="video-icon">3</div>
+          <div class="video-body">
+            <h4>视觉执行</h4>
+            <p>封面图A/B测试、字幕动效、转场节奏、品牌色渗透，形成统一视觉语言。</p>
+            <div class="video-tags"><span>封面优化</span><span>字幕节奏</span><span>品牌渗透</span></div>
+          </div>
+        </div>
       </div>
     </div>
 
