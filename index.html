@@ -74,6 +74,8 @@ button{font-family:inherit;cursor:none}
 .hero-bio.show{opacity:1}
 .hero-scroll{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);font-size:14px;color:rgba(255,255,255,0.5);animation:float 2s ease-in-out infinite;z-index:1}
 @keyframes float{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+@keyframes drawLine{to{stroke-dashoffset:0}}
+@keyframes fadeIn{to{opacity:1}}
 
 /* ============ ACHIEVEMENTS SECTION ============ */
 .achievements-section{padding:180px 0;background:#FFFFFF}
@@ -352,6 +354,44 @@ button{font-family:inherit;cursor:none}
       <div class="data-card"><div class="num" style="font-size:22px;font-weight:700;color:#EA580C">数据复盘</div><div class="lbl">对新课标改革有独特的见解，能通过课标对课堂进行有效规划。对阶段性测试进行分析，优化教学策略，并负责贯彻落实</div></div>
       <div class="data-card"><div class="num" style="font-size:22px;font-weight:700;color:#EA580C">用户运营</div><div class="lbl">负责60+学生的全周期学习管理，搭建学情追踪数据库。通过数据分析定位学习痛点，设计分层干预方案，并负责落实与数据追踪</div></div>
       <div class="data-card"><div class="num" style="font-size:22px;font-weight:700;color:#EA580C">项目管理</div><div class="lbl">统筹课堂授课、课后辅导、考试分析、学生谈话、家校沟通等五条业务线并行推进</div></div>
+    </div>
+    <h3 class="fade-up" style="margin-top:48px;font-size:22px;font-weight:600;color:#1A1A1A">工作成果</h3>
+    <div class="fade-up" style="display:flex;gap:40px;align-items:center;margin-top:24px;flex-wrap:wrap">
+      <div style="flex:1;min-width:300px;background:#FFF;border-radius:16px;padding:28px;box-shadow:0 4px 20px rgba(0,0,0,0.04)">
+        <div style="font-size:14px;color:#999;margin-bottom:8px">班级本科率增长</div>
+        <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:20px">
+          <span style="font-size:14px;color:#999">高一</span>
+          <span style="font-size:36px;font-weight:900;color:#999">50%</span>
+          <span style="font-size:24px;color:#E5E5E5">→</span>
+          <span style="font-size:14px;color:#EA580C">高三</span>
+          <span style="font-size:36px;font-weight:900;color:#EA580C">85%</span>
+        </div>
+        <svg viewBox="0 0 300 120" style="width:100%;height:auto">
+          <defs>
+            <linearGradient id="lineGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#EA580C" stop-opacity="0.25"/>
+              <stop offset="100%" stop-color="#EA580C" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <path d="M0,100 L75,80 Q90,75 112,70 Q135,65 150,50 Q165,35 188,42 Q210,48 225,30 L300,20"
+                fill="none" stroke="#EA580C" stroke-width="3" stroke-linecap="round"
+                style="stroke-dasharray:400;stroke-dashoffset:400;animation:drawLine 1.5s 0.3s forwards"/>
+          <path d="M0,100 L75,80 Q90,75 112,70 Q135,65 150,50 Q165,35 188,42 Q210,48 225,30 L300,20 L300,120 L0,120 Z"
+                fill="url(#lineGrad)" opacity="0"/>
+          <circle cx="300" cy="20" r="5" fill="#EA580C" style="opacity:0;animation:fadeIn 0.5s 1.5s forwards"/>
+          <line x1="0" y1="110" x2="300" y2="110" stroke="#E5E5E5" stroke-width="1"/>
+          <text x="0" y="118" font-size="10" fill="#999">高一上</text>
+          <text x="70" y="118" font-size="10" fill="#999">高一下</text>
+          <text x="145" y="118" font-size="10" fill="#999">高二上</text>
+          <text x="220" y="118" font-size="10" fill="#999">高二下</text>
+          <text x="285" y="118" font-size="10" fill="#EA580C" font-weight="700">高三下</text>
+        </svg>
+      </div>
+      <div style="flex:0 0 240px;background:#FFF7ED;border-radius:16px;padding:36px 28px;text-align:center;border:2px solid #EA580C">
+        <div style="font-size:14px;color:#999;margin-bottom:12px">历史组本科率</div>
+        <div style="font-size:48px;font-weight:900;color:#EA580C;line-height:1">前三</div>
+        <div style="font-size:14px;color:#666;margin-top:8px">市排名稳居前三</div>
+      </div>
     </div>
     <div class="exp-detail-panel fade-up" id="expDetail"></div>
   </div>
