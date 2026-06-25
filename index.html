@@ -89,6 +89,7 @@ button{font-family:inherit;cursor:none}
 .achievements-section .exp-detail-panel{font-size:14px;color:#999999;line-height:1.7;margin-top:10px;min-height:24px;transition:opacity 0.3s}
 .achievements-section .divider{width:100%;height:1px;background:#E5E5E5;margin:80px 0}
 .achievements-section .data-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:32px}
+.achievements-section .data-cards.four-col{grid-template-columns:repeat(4,1fr)}
 .achievements-section .data-card{background:#FFFFFF;border-radius:16px;padding:36px 28px;text-align:center;box-shadow:0 8px 32px rgba(0,0,0,0.05);opacity:0;transform:translateY(30px);transition:opacity 0.7s cubic-bezier(0.25,0.1,0.25,1),transform 0.7s cubic-bezier(0.25,0.1,0.25,1),box-shadow 0.3s}
 .achievements-section .data-card.show{opacity:1;transform:translateY(0)}
 .achievements-section .data-card:hover{box-shadow:0 12px 40px rgba(0,0,0,0.1);transform:translateY(-4px)}
@@ -263,11 +264,11 @@ button{font-family:inherit;cursor:none}
 /* ============ RESPONSIVE ============ */
 @media (max-width:1024px){
   .ops-cards{grid-template-columns:repeat(2,1fr)}
-  .achievements-section .data-cards,.cert-grid{grid-template-columns:repeat(2,1fr)}
+  .achievements-section .data-cards,.achievements-section .data-cards.four-col,.cert-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media (max-width:768px){
   .hero-tagline{font-size:clamp(28px, 10vw, 48px)}
-  .achievements-section .data-cards,.ops-cards,.cert-grid{grid-template-columns:1fr}
+  .achievements-section .data-cards,.achievements-section .data-cards.four-col,.ops-cards,.cert-grid{grid-template-columns:1fr}
   .artwork-panel{position:relative;flex-direction:column;gap:32px;height:auto;padding:60px 0;z-index:auto!important}
   .art-panel-image,.art-panel-info{flex:1 1 auto;width:100%;opacity:1!important;transform:none!important}
   .nav-overlay-mobile a{font-size:28px}
@@ -345,19 +346,12 @@ button{font-family:inherit;cursor:none}
 
     <!-- Block 3 -->
     <div class="year-anchor slide-in">2023 — 今</div>
-    <h3 class="fade-up">高中历史教师 & 副班主任</h3>
-    <p class="desc fade-up">所在历史组本科率 市排名前三</p>
-    <div class="data-cards">
-      <div class="data-card"><div class="num"><span data-count="50">0</span>% → <span data-count="80">0</span>%</div><div class="lbl">班级本科率提升</div></div>
-      <div class="data-card"><div class="num" data-count="50" data-suffix="+">0+</div><div class="lbl">学生提升人数</div></div>
-      <div class="data-card"><div class="num"><span data-count="98">0</span>%</div><div class="lbl">家长满意率</div></div>
-    </div>
-    <div class="tags fade-up exp-tags" style="margin-top:24px">
-      <span class="exp-tag" data-detail="设计制作高一至高三教学内容（包括PPT、图文资料、教学视频等）">教学转化</span>
-      <span class="exp-tag" data-detail="组内协调分工与集体备课，严格执行上级安排，所在历史组高一至高三教学成绩本科率市排名前三">协同备课</span>
-      <span class="exp-tag" data-detail="对高考历史高频考点、新课标改革解析有独特的见解，并能通过课标对历史课堂进行有效规划。对每次阶段性测试进行分析，优化教学策略，并负责贯彻落实">数据复盘</span>
-      <span class="exp-tag" data-detail="课堂讲授、课下辅导、考试分析、家校沟通等，每周处理30+条学生与家长反馈">项目统筹</span>
-      <span class="exp-tag" data-detail="分析学生学习与心理问题，进行个性化谈话">个性化辅导</span>
+    <h3 class="fade-up">K12（高中阶段）内容策划与教学管理</h3>
+    <div class="data-cards four-col">
+      <div class="data-card"><div class="num" style="font-size:22px;font-weight:700;color:#EA580C">内容策划</div><div class="lbl">设计制作高一至高三教学内容，包括PPT、图文资料、教学视频等</div></div>
+      <div class="data-card"><div class="num" style="font-size:22px;font-weight:700;color:#EA580C">数据复盘</div><div class="lbl">对阶段性测试进行分析，优化教学策略，精准把握高考考点与课标方向</div></div>
+      <div class="data-card"><div class="num" style="font-size:22px;font-weight:700;color:#EA580C">用户运营</div><div class="lbl">每周处理30+条学生与家长反馈，个性化跟踪学习与心理状态</div></div>
+      <div class="data-card"><div class="num" style="font-size:22px;font-weight:700;color:#EA580C">项目管理</div><div class="lbl">组内协调分工、集体备课、考试分析与家校沟通全流程统筹</div></div>
     </div>
     <div class="exp-detail-panel fade-up" id="expDetail"></div>
   </div>
